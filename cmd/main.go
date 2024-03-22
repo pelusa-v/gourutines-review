@@ -1,6 +1,8 @@
 package main
 
-import "goroutines-review/internal/race_conditions"
+import (
+	"goroutines-review/internal/channels"
+)
 
 func main() {
 	// basics.TestPackage()
@@ -12,5 +14,6 @@ func main() {
 	// race_conditions.ConfigureServer()
 	// race_conditions.ExecuteGame()
 	// race_conditions.ExecuteRace()
-	race_conditions.StartWar()
+	// race_conditions.StartWar()
+	channels.ExecuteRandomNumbersExample()
 }
