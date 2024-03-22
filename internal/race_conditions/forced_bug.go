@@ -14,18 +14,18 @@ var (
 func TestForcedRaceCondition() {
 	wg.Add(2)
 
-	go increaseCounter("A", 2)
-	go increaseCounter("B", 2)
+	go increaseCounter(1)
+	go increaseCounter(2)
 
-	fmt.Printf("%s\n", "Wait for finish...")
 	wg.Wait()
+	// fmt.Printf("%s\n", "Wait for finish...")
 	fmt.Printf("Final value of COUNTER: %d\n", COUNTER)
 }
 
-func increaseCounter(id string, n int) {
+func increaseCounter(id int) {
 	defer wg.Done()
 
-	for i := 0; i < n; i++ {
+	for i := 0; i < 2; i++ {
 		localCounter := COUNTER
 		runtime.Gosched() // To force race condition
 		localCounter++

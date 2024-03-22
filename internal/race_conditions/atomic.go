@@ -33,7 +33,7 @@ func ConfigureServer() {
 	time.Sleep(10 * time.Second)
 
 	atomic.StoreInt64(&SHUTDOWN, 1)
-	fmt.Printf("%s\n", "Server SHUTDOWN")
+	fmt.Printf("%s\n", "Servers SHUTDOWN")
 
 	wg.Wait()
 }

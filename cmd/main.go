@@ -1,8 +1,6 @@
 package main
 
-import (
-	"goroutines-review/internal/race_conditions"
-)
+import "goroutines-review/internal/race_conditions"
 
 func main() {
 	// basics.TestPackage()
